@@ -6,6 +6,7 @@ from rest_framework import permissions
 from rest_framework.decorators import api_view
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
+import config
 
 swagger_info = openapi.Info(
     title="Cookbook API",
@@ -20,7 +21,7 @@ schema_view = get_schema_view(
     swagger_info,
     public=True,
     permission_classes=(permissions.AllowAny,),
-    url="https://cookbook.cr0ss.org",
+    url=config.API_URL,
 )
 
 @api_view(['GET'])
